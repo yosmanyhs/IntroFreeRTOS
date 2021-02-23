@@ -1,5 +1,6 @@
 # Prerequisites
 *.d
+*.dep
 
 # Object files
 *.o
@@ -11,6 +12,8 @@
 *.ilk
 *.map
 *.exp
+*.sct
+*.htm
 
 # Precompiled Headers
 *.gch
@@ -35,12 +38,16 @@
 *.i*86
 *.x86_64
 *.hex
+*.axf
 
 # Debug files
 *.dSYM/
 *.su
 *.idb
 *.pdb
+*.crf
+*.iex
+*.lnp
 
 # Kernel Module Compile Results
 *.mod*
@@ -50,3 +57,56 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+/Proj_Cube/Drivers/CMSIS/Core/Template/ARMv8-M/main_s.c
+/Proj_Cube/Drivers/CMSIS/Core/Template/ARMv8-M/tz_context.c
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/system_stm32l4xx.c
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l4a6xx_flash.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l4a6xx_sram.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l4p5xx_flash.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l4p5xx_sram.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l4q5xx_flash.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l4q5xx_sram.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l4r5xx_flash.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l4r5xx_sram.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l4r7xx_flash.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l4r7xx_sram.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l4r9xx_flash.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l4r9xx_sram.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l4s5xx_flash.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l4s5xx_sram.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l4s7xx_flash.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l4s7xx_sram.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l4s9xx_flash.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l4s9xx_sram.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l412xx_flash.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l412xx_sram.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l422xx_flash.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l422xx_sram.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l431xx_flash.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l431xx_sram.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l432xx_flash.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l432xx_sram.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l433xx_flash.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l433xx_sram.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l442xx_flash.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l442xx_sram.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l443xx_flash.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l443xx_sram.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l451xx_flash.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l451xx_sram.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l452xx_flash.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l452xx_sram.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l462xx_flash.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l462xx_sram.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l471xx_flash.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l471xx_sram.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l475xx_flash.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l475xx_sram.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l476xx_flash.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l476xx_sram.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l485xx_flash.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l485xx_sram.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l486xx_flash.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l486xx_sram.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l496xx_flash.icf
+/Proj_Cube/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/iar/linker/stm32l496xx_sram.icf
