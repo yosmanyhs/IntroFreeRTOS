@@ -137,6 +137,7 @@
         
         // ... evaluar otras posibles interrupciones, etc. 
    }
+   //AQUI HABIA UNA COMENTARIO IREELEVANTE PERO USE EL GIT PARA VOLVER A LA VESION ANTERIOR
    
    Haciendo una comparacion con el mundo de Arduino, que quizas hayas visto previamente, seria algo
    como lo siguiente: 
