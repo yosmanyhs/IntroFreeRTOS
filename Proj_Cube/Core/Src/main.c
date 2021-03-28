@@ -110,6 +110,10 @@
    y el compilador). Dado que las interrupciones no reciben ni devuelven datos su prototipo es el
    siguiente:
    
+   //VI QUE VARIAS FUNCIONES DE FREERTOS(O MACROS PARA SER MAS ESPECIFICOS SI NO ME EQUIVOCO)
+   //QUE SE EJECUTEN DENTRO DE LAS IT DEBEN SER DIFERENCIADAS,NORMALMENTE A;ADIENDOLE EL SUFIJO ISR
+   
+   
    void manejador_interrupcion(void)
    {
         int fuente_interrupcion;
