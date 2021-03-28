@@ -30,6 +30,7 @@
    permite utilizar funciones y variables disponibles en otros archivos de codigo
    fuente o en bibliotecas ya compiladas (donde no ves el codigo pero tienes la 
    funcionalidad). 
+   
  
    Cuando se genera un proyecto utilizando el STM32CubeMx, en la generacion del 
    codigo se incluyen estas "secciones" especiales, delimitadas usando comentarios
@@ -40,6 +41,8 @@
    proyecto del Cube hay una opcion que debe estar seleccionada para que esto se
    cumpla, en especifico es la opcion 'Keep user code when re-generating', disponible
    en las opciones de generacion del proyecto [Project Manager -> Code Generator]
+   
+   //ESTA OPCION ESTA COMO DEFAULT,POR LO QUE NO TENGO QUE IR A SELECIONARLA DIRECTAMENTE 
    
    La intencion con este proyecto es que te lleves una idea general de la estructura
    generada en el Cube y puedas comenzar a familiarizarte con este tema de la programacion
