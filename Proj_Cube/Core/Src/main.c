@@ -172,6 +172,7 @@
    }
    
    --------------------------------------------------------------------------------------------------------------------
+   //A PARTIR DE AQUI CREARE OTRS RAMA
    
    Esta filosofia del setup()/loop() o inicializacion/ciclo infinito es valida solamente cuando el proyecto no es muy 
    complejo, pero tiene el problema de no ser escalable, ademas de ser muy dificil de mantener cuando intentar agregar
