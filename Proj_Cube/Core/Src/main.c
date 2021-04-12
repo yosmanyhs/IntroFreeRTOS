@@ -221,6 +221,10 @@
    pvParam. Un uso tipico de esto puede ser la ejecucion de una tarea que necesite saber determinados datos antes
    de hacer su trabajo. 
    
+   //EN UN PROGRAMA DE PRACTICA USE LAS VARIABLES PARA CREAR VARIAS INSTANCIAS A PARTIR DE UNA UNICA FUNCION GENERADORA
+   //AL FINAL ERAN 2 TAREAS QUE HACIAN PARPADEAR EL LED,LO QUE EL TIEMPO DE PARPADEO LO PASE COMO VARIABLE
+   //ASI CON LA MISMA FUNCION IMPLEMENTA LAS 2 TAREAS
+   
    En estos casos, la forma del programa cambia a una similar a esta:
    
    void main(void)
@@ -230,6 +234,8 @@
         // crear las tareas que sean necesarias (esto no solo puede ser aqui, tambien en otros lugares se pueden 
         // crear nuevas tareas)
         
+		//TAMBIEN SE VPUEDEN CREAR TAREAS DENTRO DE OTRAS TAREAS
+		
         crear_tarea(tarea1, "nombre_tarea1", prioridad, ...);
         
         crear_tarea(tarea2, "nombre2", prioridad, ...);
@@ -240,7 +246,7 @@
         
         // una vez creado todo lo requerido inicialmente, arrancar el planificador del sistema operativo
         
-        arrancar_planificador_os();
+        arrancar_planificador_os();//SI,QUE CAMBIO LA NOMENCLATURA CUANDO SE USA CMSIS
         
         // una vez arrancado el planificador del SO la ejecucion del main finaliza y solamente se ejecutan
         // las tareas definidas previamente y dos tareas adicionales (de forma predeterminada). Estas dos 
@@ -248,19 +254,23 @@
         // mas nada que hacer, seria el equivalente al while (1) {} que habia antes en el main y otra tarea 
         // que lleva el control de los temporizadores "software" (mas adelante ...)
         
+		//EL IDLE TIENE TAMBIEN TIENE UNA FUNCION DE CALLBACK EN QUE SE PUEDE ESCRIBIR UN PEQUEÑO CODIGO 
+		//LO QUE TIENE VALIAS LIMITACIONES
+		
         // teniendo en cuenta lo anterior, si la ejecucion llega a este punto (cosa que NO deberia pasar) 
         // indica que hubo un problema a la hora de arrancar el SO, generalmente por falta de memoria, etc.
         
         si_llego_aqui_hubo_problemas();     // esto nunca deberia ejecutarse pero puede servir como medio 
                                             // de diagnostico de problemas. 
    }
+   //EFECTIVAMENTE,EN LOS PRIMEROS PROGRAMAS QUE HICE LLEGABA AHI
 
  */
  
 /* Como nos interesa utilizar el FreeRTOS debemos incluir sus archivos de cabecera */ 
 #include "FreeRTOS.h"       // Siempre
 #include "task.h"           // Para poder usar tareas
-
+//ESTO LO HACE SIMPRE AUTOMATICO EL CUBEMX SIEMPRE NO?
 
 /* USER CODE END Includes */
 
@@ -270,8 +280,10 @@
 /*
     En esta seccion es recomendable poner los 'typedef' especificos del programa (aunque lo sugerido realmente es hacerlo en 
     ficheros .h (de cabecera) para que sea mas facil su utilizacion en otros archivos de codigo fuente, etc). 
-    
-    En esencia el typedef es una forma de crear un nuevo nombre o alias para un tipo de datos ya existente (que puede ser otro typedef tambien).
+
+//    
+  
+  En esencia el typedef es una forma de crear un nuevo nombre o alias para un tipo de datos ya existente (que puede ser otro typedef tambien).
     Por ejemplo, existen un grupo de tipos de datos basicos int (enteros), float y double (numeros de punto flotante, o sea, con coma), 
     asi como otros tipos compuestos como estructuras y uniones (struct / union). El typedef lo que hace es crear un nombre nuevo, que 
     puede ser usado en lugar de esos tipos de datos predefinidos. 
@@ -285,7 +297,10 @@
                                             
     Asi, una vez definidos esos typedef puedes decir en tu codigo algo como esto:
     
-    void main(void)
+	///EN LA PARTE DE LAS MAQUINAS DE ESTADO ANALIZANDO UN POCO EL CODIGO VI UN POCO DE LOS STRUCT Y ENUM
+    // Y LEI QUE ERA UNA BUENA PRACTICA EUSAR TYPEDEF LUEGO DE STRUCT,ASI LUEGO SE ASIGNA ESE TUPO DE DATO MAS FACIL
+	
+	void main(void)
     {
         NUMERO_ENTERO   mi_variable_entera = 0;
         
@@ -304,13 +319,15 @@
     En este espacio se sugiere poner los #define propios de la aplicacion, de forma analoga a los typedefs
     es preferible ponerlos en .h y solamente poner aqui los especificos a usar en este fichero.
     
-    
+	//ESTO EL CUBEMX LO HACE AUTOMATICO PARA LOS PINES QUE UN0 HABILITE CREO
+	//AL MENOS LO HIZO PARA LED,BOTON Y PUERTO SERIE EL LOS PROGRAMAS QUE HE HECHO
+	
     Un #define lo que hace es basicamente sustitucion de texto, o sea, dondequiera que aparezca el texto
     inmediatamente despues del #define se sustituye por el texto a su derecha. Por ejemplo:
     
     #define PI  3.14159
     
-    esto crea una constante simbolica llamada PI y su 'valor' sera 3.14159, asi cuando tengas ese texto (PI)
+	esto crea una constante simbolica llamada PI y su 'valor' sera 3.14159, asi cuando tengas ese texto (PI)
     el el codigo el compilador lo que hace es poner 3.14159
     
     float area_circulo = PI * radio * radio; 
@@ -325,6 +342,7 @@
     que es solamente sustitucion de texto. La utilidad mas explotada del #define es la definicion de constantes 
     simbolicas como el ejemplo de PI y auxiliar en los procesos de compilacion condicional (decidir que partes 
     compilar y cuales no en dependencia de esos defines)
+
 
  */
 
@@ -341,7 +359,6 @@
     
     Este macro permite calcular el cuadrado de dos numeros que pueden ser enteros o de punto flotante.
     Aqui la x seria el 'argumento' del macro. Asi cuando el programa se dice lo siguiente:
-    
     
     int lado_cuadrado = 10;
     int area_cuadrado = CALC_CUADRADO(lado_cuadrado);
@@ -434,10 +451,13 @@ void SystemClock_Config(void);
     
     int evaluar_funcion(int arg);       // esto va delante del main o antes de la funcion que la llame a ella.
     
+	//EN LOS PROGRAMAS QUE HE ECHO LOS CREO ARRIBA,ANTES DEL MAIN
  */
  
  /* Prototipo de la funcion que representara la tarea_principal */
 static void tarea_principal(void* parametro_sin_uso);   // static porque solo se usara en este fichero
+
+//TENGO QUE PROBAR CREAR UNA FUNCION EN EL .H Y USARLA EN EL MAIN
 
 /* USER CODE END PFP */
 
@@ -601,6 +621,7 @@ void SystemClock_Config(void)
 /* USER CODE BEGIN 4 */
 
 /* Aqui mi super tarea flasheadora de LEDs */
+//PUES YO YA FLASHEO CON TASK Y CON TIMER
 static void tarea_principal(void* parametro_sin_uso)
 {
     int led_encendido;
@@ -635,8 +656,10 @@ static void tarea_principal(void* parametro_sin_uso)
            esta dificil ver algo
         */
         vTaskDelay(pdMS_TO_TICKS(1000));        // Hacer una media de 1000 ms antes de seguir.
+        //ESTA MANDA A LA F AL ESTADO BLOQUEADO PARA QUE SE PUEDA USAR EL MICRO EN OTRAS COSAS MIENTRAS TANTO
+		//TENGO QUE VER SI EL HAL_DELAY TAMBIEN O SOLO ESPERA OCPUANDO EL MICRO
         
-        /* el pdMS_TO_TICKS es un macro que saca la cuenta de cuantos 'ticks' hacen falta para 
+		/* el pdMS_TO_TICKS es un macro que saca la cuenta de cuantos 'ticks' hacen falta para 
         llegar a la cantidad de milisegundos que se quiere. Por defecto cada tick dura 1ms pero se 
         puede cambiar */
         
@@ -707,3 +730,4 @@ void assert_failed(uint8_t *file, uint32_t line)
 #endif /* USE_FULL_ASSERT */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
+//Y SE ACABO
